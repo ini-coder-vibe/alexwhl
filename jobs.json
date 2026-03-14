@@ -1,0 +1,122 @@
+[
+  {
+    "id": "wholesale-account-manager",
+    "title": "Wholesale Account Manager",
+    "dept": "Sales & Business Development",
+    "type": "Full-Time · Permanent",
+    "location": "Toronto, ON — Hybrid",
+    "salary": "$29.00 – $37.50 / hr",
+    "vacancies": 2,
+    "lmia": true,
+    "posted": "March 10, 2025",
+    "closing": "April 30, 2025",
+    "summary": "Own and grow a portfolio of retail accounts across North America. You'll manage relationships, negotiate terms, and identify new business opportunities within the wholesale clothing market.",
+    "responsibilities": [
+      "Manage and grow an assigned portfolio of wholesale retail accounts",
+      "Negotiate pricing, terms, and seasonal buying agreements",
+      "Prospect and onboard new B2B clients across Canada and the US",
+      "Prepare and present order forecasts and sales reports",
+      "Collaborate with the inventory team to align stock with client demand",
+      "Attend trade shows and industry events as a brand representative"
+    ],
+    "requirements": [
+      "2+ years experience in B2B or wholesale sales",
+      "Strong negotiation and relationship management skills",
+      "Proficiency with CRM software (Salesforce or equivalent)",
+      "Excellent written and verbal communication in English",
+      "Ability to travel domestically on occasion",
+      "Fashion or apparel industry experience is an asset"
+    ],
+    "tags": ["B2B Sales", "Wholesale", "CRM"]
+  },
+  {
+    "id": "inventory-buying-coordinator",
+    "title": "Inventory & Buying Coordinator",
+    "dept": "Operations & Merchandising",
+    "type": "Full-Time · Permanent",
+    "location": "Vancouver, BC — On-site",
+    "salary": "$25.00 – $32.50 / hr",
+    "vacancies": 1,
+    "lmia": true,
+    "posted": "March 8, 2025",
+    "closing": "April 25, 2025",
+    "summary": "Oversee stock levels, coordinate with overseas suppliers, and support the buying team in sourcing seasonal collections. You'll be the link between supply and sell-through performance.",
+    "responsibilities": [
+      "Monitor and manage inventory levels across all product categories",
+      "Liaise with overseas manufacturers and domestic suppliers",
+      "Support the buying team with seasonal order placement and tracking",
+      "Analyse sell-through data and flag slow-moving SKUs",
+      "Maintain accurate records in the ERP system",
+      "Coordinate inbound shipments and resolve delivery discrepancies"
+    ],
+    "requirements": [
+      "2+ years in inventory management, buying, or merchandise planning",
+      "Experience with ERP or inventory management software",
+      "Strong analytical and Excel skills",
+      "Organised, detail-oriented, and comfortable with high SKU volumes",
+      "Knowledge of import/export processes is an asset",
+      "Fashion or wholesale industry background preferred"
+    ],
+    "tags": ["Inventory", "Buying", "ERP"]
+  },
+  {
+    "id": "outbound-logistics-supervisor",
+    "title": "Outbound Logistics Supervisor",
+    "dept": "Logistics & Distribution",
+    "type": "Full-Time · Permanent",
+    "location": "Mississauga, ON — On-site",
+    "salary": "$27.00 – $34.50 / hr",
+    "vacancies": 1,
+    "lmia": true,
+    "posted": "March 5, 2025",
+    "closing": "April 20, 2025",
+    "summary": "Lead the outbound shipping team ensuring accurate, on-time dispatch of wholesale orders. You'll manage carrier relationships, oversee warehouse staff, and optimise fulfilment processes.",
+    "responsibilities": [
+      "Supervise daily outbound shipping operations and warehouse staff",
+      "Manage relationships with freight carriers and third-party logistics providers",
+      "Ensure order accuracy and on-time dispatch for all wholesale accounts",
+      "Develop and improve standard operating procedures for fulfilment",
+      "Track KPIs including dispatch rates, error rates, and carrier performance",
+      "Handle escalations and resolve shipping discrepancies promptly"
+    ],
+    "requirements": [
+      "3+ years in logistics, warehousing, or distribution operations",
+      "Previous supervisory or team lead experience required",
+      "Familiarity with WMS (Warehouse Management Systems)",
+      "Strong organisational and problem-solving skills",
+      "Forklift certification is an asset",
+      "Ability to work in a fast-paced physical environment"
+    ],
+    "tags": ["Logistics", "Warehousing", "Team Lead"]
+  },
+  {
+    "id": "general-worker",
+    "title": "General Worker",
+    "dept": "Warehouse & Fulfilment",
+    "type": "Full-Time · Permanent",
+    "location": "Brampton, ON — On-site",
+    "salary": "$18.50 – $22.00 / hr",
+    "vacancies": 4,
+    "lmia": true,
+    "posted": "March 12, 2025",
+    "closing": "May 1, 2025",
+    "summary": "Support day-to-day warehouse operations including receiving stock, sorting garments, picking and packing wholesale orders, and maintaining accurate inventory records.",
+    "responsibilities": [
+      "Receive, sort, and store incoming garment shipments",
+      "Pick and pack wholesale orders accurately according to packing slips",
+      "Maintain cleanliness and organisation of warehouse floor",
+      "Conduct routine stock counts and report discrepancies",
+      "Operate basic warehouse equipment safely",
+      "Follow all health, safety, and company policies at all times"
+    ],
+    "requirements": [
+      "No formal education requirement — training provided on the job",
+      "Ability to lift up to 25kg and stand for extended periods",
+      "Reliable, punctual, and able to work as part of a team",
+      "Basic English communication skills",
+      "Previous warehouse or retail stock experience is an asset",
+      "Must be legally entitled to work in Canada (LMIA pathway available)"
+    ],
+    "tags": ["Warehouse", "Pick & Pack", "Entry Level"]
+  }
+]

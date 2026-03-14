@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APEX WHOLESALE — Fashion Forward</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=2" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+  <!-- ── HIRING BANNER ── -->
+  <div class="hiring-banner" id="hiringBanner">
+    <div class="hiring-banner__inner">
+      <p class="hiring-banner__text">
+        <span class="hiring-banner__label">We're hiring!</span>
+        4 open positions in wholesale operations — LMIA supported
+      </p>
+      <a href="careers.html" class="hiring-banner__cta">
+        View Roles <i class="ph ph-arrow-right"></i>
+      </a>
+    </div>
+    <button class="hiring-banner__close" id="hiringBannerClose" aria-label="Close">
+      <i class="ph ph-x"></i>
+    </button>
+  </div>
+
+  <!-- ── NAVIGATION ── -->
+  <nav class="nav" id="mainNav">
+    <div class="nav__placeholder"></div>
+    <a href="index.html">
+  <img src="alexwhl_logo.png" alt="Alex Wholesale" class="nav__logo-img" />
+</a>
+    <button class="nav__hamburger" id="navHamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- ── NAV MENU (outside nav so position:fixed works) ── -->
+  <ul class="nav__links" id="navLinks">
+    <li class="nav__close-item">
+      <button class="nav__close-btn" id="navClose" aria-label="Close menu">
+        <span></span>
+        <span></span>
+      </button>
+    </li>
+    <li><a href="#gallery">Collections</a></li>
+    <li><a href="catalog.html">Catalog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="#" class="nav__cta">Order Now</a></li>
+  </ul>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero__video-wrap">
+      <div class="hero__placeholder"></div>
+      <video
+        class="hero__video"
+        id="heroVideo"
+        src="hero.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
+      <div class="hero__overlay"></div>
+    </div>
+
+    <div class="hero__content">
+      <p class="hero__eyebrow">Wholesale Clothing — EST. 2010</p>
+      <h1 class="hero__title">Move More.<br/>Sell Faster.</h1>
+      <p class="hero__sub">Premium fashion at wholesale prices. Bulk orders, private labels, and curated seasonal drops — all in one place.</p>
+      <div class="hero__actions">
+        <a href="#gallery" class="btn btn--primary">Browse Collections</a>
+      </div>
+    </div>
+
+    <div class="hero__badge">
+      <span>100 +</span>
+      <small>Styles Available</small>
+    </div>
+
+
+  </section>
+
+  <!-- ── MARQUEE STRIP ── -->
+  <div class="marquee-wrap">
+    <div class="marquee">
+      <span>Streetwear</span><span class="dot">◆</span>
+      <span>Denim</span><span class="dot">◆</span>
+      <span>Athleisure</span><span class="dot">◆</span>
+      <span>Outerwear</span><span class="dot">◆</span>
+      <span>Workwear</span><span class="dot">◆</span>
+      <span>Basics</span><span class="dot">◆</span>
+      <span>Footwear</span><span class="dot">◆</span>
+      <span>Accessories</span><span class="dot">◆</span>
+      <span>Streetwear</span><span class="dot">◆</span>
+      <span>Denim</span><span class="dot">◆</span>
+      <span>Athleisure</span><span class="dot">◆</span>
+      <span>Outerwear</span><span class="dot">◆</span>
+      <span>Workwear</span><span class="dot">◆</span>
+      <span>Basics</span><span class="dot">◆</span>
+      <span>Footwear</span><span class="dot">◆</span>
+      <span>Accessories</span><span class="dot">◆</span>
+    </div>
+  </div>
+
+  <!-- ── GALLERY ── -->
+  <section class="gallery" id="gallery">
+    <div class="gallery__header">
+      <p class="gallery__label">Current Drop</p>
+      <h2 class="gallery__title">SS25 Wholesale<br/>Collection</h2>
+      <a href="catalog.html" class="btn btn--outline">Full Catalog →</a>
+    </div>
+
+    <div class="gallery__grid">
+
+      <div class="gallery__item gallery__item--tall">
+        <img src="streetwear.jpeg" alt="Streetwear" loading="lazy" />
+        <div class="gallery__info">
+          <span class="gallery__tag">Streetwear</span>
+          <p>Drop-Shoulder &amp; Graphic Tees</p>
+        </div>
+      </div>
+
+      <div class="gallery__item">
+        <img src="denim.jpeg" alt="Denim" loading="lazy" />
+        <div class="gallery__info">
+          <span class="gallery__tag">Denim</span>
+          <p>Indigo Wash &amp; Raw Selvedge</p>
+        </div>
+      </div>
+
+      <div class="gallery__item">
+        <img src="basics.jpeg" alt="Basics" loading="lazy" />
+        <div class="gallery__info">
+          <span class="gallery__tag">Basics</span>
+          <p>Core Essentials</p>
+        </div>
+      </div>
+
+      <div class="gallery__item gallery__item--wide">
+        <img src="outerwear.jpeg" alt="Outerwear" loading="lazy" />
+        <div class="gallery__info">
+          <span class="gallery__tag">Outerwear</span>
+          <p>Parkas, Bombers &amp; Topcoats</p>
+        </div>
+      </div>
+
+      <div class="gallery__item">
+        <img src="activewear.jpeg" alt="Activewear" loading="lazy" />
+        <div class="gallery__info">
+          <span class="gallery__tag">Activewear</span>
+          <p>Performance &amp; Training Sets</p>
+        </div>
+      </div>
+
+      <div class="gallery__item gallery__item--tall">
+        <img src="accessories.jpeg" alt="Accessories" loading="lazy" />
+        <div class="gallery__info">
+          <span class="gallery__tag">Accessories</span>
+          <p>Bags, Caps &amp; Carry-Alls</p>
+        </div>
+      </div>
+
+      <div class="gallery__item">
+        <img src="casual.jpeg" alt="Smart Casual" loading="lazy" />
+        <div class="gallery__info">
+          <span class="gallery__tag">Smart Casual</span>
+          <p>Blazers &amp; Tailored Separates</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__top">
+        <a href="index.html">
+  <img src="alexwhl_logo.png" alt="Alex Wholesale" class="nav__logo-img" />
+</a>
+        <div class="footer__links">
+          <a href="careers.html">Careers</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+
+      <div class="footer__mid">
+        <p class="footer__address">057 King Street West, Toronto, ON M5H 1A1, Canada</p>
+        <a href="tel:+14160000000" class="footer__phone">+1 (416) 833-0911</a>
+        <span class="footer__mid-sep">|</span>
+        <a href="mailto:alex@bimp.me" class="footer__email">alex@bimp.me</a>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2025 Alex Wholesale. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+  <script>
+    (function () {
+      // Nav scroll behaviour
+      var nav = document.querySelector('.nav');
+      function updateNav() {
+        if (window.scrollY > 50) {
+          nav.classList.add('nav--scrolled');
+        } else {
+          nav.classList.remove('nav--scrolled');
+        }
+      }
+      window.addEventListener('scroll', updateNav, { passive: true });
+      updateNav();
+
+      // Hamburger menu
+      var btn      = document.getElementById('navHamburger');
+      var menu     = document.getElementById('navLinks');
+      var closeBtn = document.getElementById('navClose');
+      if (btn && menu) {
+        btn.addEventListener('click', function () {
+          btn.classList.toggle('open');
+          menu.classList.toggle('open');
+        });
+        if (closeBtn) {
+          closeBtn.addEventListener('click', function () {
+            btn.classList.remove('open');
+            menu.classList.remove('open');
+          });
+        }
+        menu.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            btn.classList.remove('open');
+            menu.classList.remove('open');
+          });
+        });
+      }
+
+      // Video placeholder
+      var video = document.getElementById('heroVideo');
+      var placeholder = video ? video.previousElementSibling : null;
+      if (video && placeholder) {
+        var reveal = function () {
+          placeholder.style.opacity = '0';
+          placeholder.style.pointerEvents = 'none';
+          video.classList.add('is-playing');
+        };
+        if (video.readyState >= 3) { reveal(); }
+        else { video.addEventListener('canplay', reveal, { once: true }); }
+      }
+
+      // Hiring banner
+      var banner   = document.getElementById('hiringBanner');
+      var bannerClose = document.getElementById('hiringBannerClose');
+      if (banner && bannerClose) {
+        if (!sessionStorage.getItem('hiringBannerDismissed')) {
+          setTimeout(function () { banner.classList.add('hiring-banner--visible'); }, 2500);
+        }
+        bannerClose.addEventListener('click', function () {
+          banner.classList.remove('hiring-banner--visible');
+          banner.classList.add('hiring-banner--hidden');
+          sessionStorage.setItem('hiringBannerDismissed', '1');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

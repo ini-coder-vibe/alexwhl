@@ -1,6 +1,0 @@
-const CONFIG = {
-  SUPABASE_URL: 'https://rubugbbiztjodehxztjt.supabase.co',
-  SUPABASE_PUBLISHABLE_KEY: 'sb_publishable_RUgyZy5L6HmDwfgwMCrscw_dAA3QqOG',
-  SUPABASE_SERVICE_KEY: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ1YnVnYmJpenRqb2RlaHh6dGp0Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MzQzNjQ2NywiZXhwIjoyMDg5MDEyNDY3fQ.u2-zzz0ISXOGjIjY-FUk_2h9jxri6WFqtaiude15FKs',
-  ADMIN_TOKEN: 'c5304cada310ab422a4fbacc8d86ec48fc66d52b824528d87dbdd62ed68e88db22a298e4035994efd2cad6ddbc5961c1c92ad628eabb9d4c9718a75d69ecd258'
-};

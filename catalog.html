@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Full Catalog — ALEX Wholesale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="catalog.css?v=4" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav class="nav">
+  <a href="index.html" class="nav__back"><i class="ph ph-arrow-left"></i></a>
+  <a href="index.html">
+  <img src="alexwhl_logo.png" alt="Alex Wholesale" class="nav__logo-img" />
+</a>
+  <button class="nav__hamburger" id="navHamburger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- ── HAMBURGER MENU OVERLAY ── -->
+<ul class="nav__links" id="navLinks">
+  <li class="nav__close-item">
+    <button class="nav__close-btn" id="navClose" aria-label="Close menu">
+      <span></span>
+      <span></span>
+    </button>
+  </li>
+  <li><a href="index.html#gallery">Collections</a></li>
+  <li><a href="catalog.html">Catalog</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="#" class="nav__cta">Order Now</a></li>
+</ul>
+
+  <!-- ── PAGE HEADER ── -->
+  <header class="page-header">
+    <div class="page-header__top">
+      <div class="page-header__inner">
+        <p class="page-header__season">SS25 — Spring / Summer 2025</p>
+        <h1 class="page-header__title">Full Wholesale Catalog</h1>
+        <p class="page-header__meta">847 styles &nbsp;·&nbsp; Updated March 2025 &nbsp;·&nbsp; MOQ from 6 units</p>
+      </div>
+      <div class="page-header__stats">
+        <div class="stat"><span class="stat__num">847</span><span class="stat__label">Total Styles</span></div>
+        <div class="stat"><span class="stat__num">12</span><span class="stat__label">Categories</span></div>
+        <div class="stat"><span class="stat__num">6+</span><span class="stat__label">Min. Order</span></div>
+        <div class="stat"><span class="stat__num">48h</span><span class="stat__label">Dispatch</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── CATEGORY TABS ── -->
+  <div class="cat-tabs-wrap">
+    <div class="cat-tabs" id="catTabs">
+      <button class="cat-tab active" data-cat="all">All</button>
+      <button class="cat-tab" data-cat="streetwear">Streetwear</button>
+      <button class="cat-tab" data-cat="denim">Denim</button>
+      <button class="cat-tab" data-cat="basics">Basics &amp; Tees</button>
+      <button class="cat-tab" data-cat="outerwear">Outerwear</button>
+      <button class="cat-tab" data-cat="activewear">Activewear</button>
+      <button class="cat-tab" data-cat="smart-casual">Smart Casual</button>
+      <button class="cat-tab" data-cat="accessories">Accessories</button>
+      <button class="cat-tab" data-cat="dresses">Dresses</button>
+    </div>
+  </div>
+
+  <!-- ── MOBILE FILTER TOGGLE ── -->
+  <button class="filter-toggle" id="filterToggle">
+    <span class="filter-toggle__label">Show Filters</span>
+    <span class="filter-toggle__icon">+</span>
+  </button>
+
+  <!-- ── MAIN LAYOUT ── -->
+  <div class="catalog-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="sidebar__search">
+        <input type="text" placeholder="Search styles, SKUs…" class="search-input" id="searchInput" autocomplete="off" />
+        <span class="search-icon">⌕</span>
+      </div>
+
+      <div class="sidebar__section">
+        <h3 class="sidebar__heading">Price Range (per unit)</h3>
+        <div class="price-range">
+          <div class="price-range__inputs">
+            <span>$<span id="priceMin">4</span></span>
+            <span>$<span id="priceMax">120</span></span>
+          </div>
+          <div class="price-range__slider-wrap" id="sliderWrap">
+            <div class="price-range__track">
+              <div class="price-range__fill" id="priceFill"></div>
+            </div>
+            <input type="range" min="4" max="120" value="4" class="range-slider" id="rangeMin" />
+            <input type="range" min="4" max="120" value="120" class="range-slider" id="rangeMax" />
+            <div class="price-range__thumb" id="thumbMin"></div>
+            <div class="price-range__thumb" id="thumbMax"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar__section">
+        <h3 class="sidebar__heading">Sizes Available</h3>
+        <div class="tag-group">
+          <label class="tag-check"><input type="checkbox" /><span>XS</span></label>
+          <label class="tag-check"><input type="checkbox" /><span>S</span></label>
+          <label class="tag-check"><input type="checkbox" /><span>M</span></label>
+          <label class="tag-check"><input type="checkbox" /><span>L</span></label>
+          <label class="tag-check"><input type="checkbox" /><span>XL</span></label>
+          <label class="tag-check"><input type="checkbox" /><span>2XL</span></label>
+          <label class="tag-check"><input type="checkbox" /><span>3XL</span></label>
+          <label class="tag-check"><input type="checkbox" /><span>4XL</span></label>
+        </div>
+      </div>
+
+      <div class="sidebar__section">
+        <h3 class="sidebar__heading">Gender</h3>
+        <div class="check-list">
+          <label class="check-row"><input type="checkbox" /><span>Women</span><em>312</em></label>
+          <label class="check-row"><input type="checkbox" /><span>Men</span><em>298</em></label>
+          <label class="check-row"><input type="checkbox" /><span>Unisex</span><em>164</em></label>
+          <label class="check-row"><input type="checkbox" /><span>Kids</span><em>73</em></label>
+        </div>
+      </div>
+
+      <div class="sidebar__section">
+        <h3 class="sidebar__heading">Fabric</h3>
+        <div class="check-list">
+          <label class="check-row"><input type="checkbox" /><span>Cotton</span><em>241</em></label>
+          <label class="check-row"><input type="checkbox" /><span>Denim</span><em>98</em></label>
+          <label class="check-row"><input type="checkbox" /><span>Polyester</span><em>187</em></label>
+          <label class="check-row"><input type="checkbox" /><span>Linen</span><em>64</em></label>
+          <label class="check-row"><input type="checkbox" /><span>Fleece</span><em>75</em></label>
+          <label class="check-row"><input type="checkbox" /><span>Nylon</span><em>54</em></label>
+          <label class="check-row"><input type="checkbox" /><span>Viscose</span><em>82</em></label>
+          <label class="check-row"><input type="checkbox" /><span>Recycled</span><em>46</em></label>
+        </div>
+      </div>
+
+      <div class="sidebar__section">
+        <h3 class="sidebar__heading">Min. Order Qty</h3>
+        <div class="check-list">
+          <label class="check-row"><input type="radio" name="moq" checked /><span>Any MOQ</span></label>
+          <label class="check-row"><input type="radio" name="moq" /><span>6+ units</span></label>
+          <label class="check-row"><input type="radio" name="moq" /><span>12+ units</span></label>
+          <label class="check-row"><input type="radio" name="moq" /><span>24+ units</span></label>
+          <label class="check-row"><input type="radio" name="moq" /><span>48+ units</span></label>
+        </div>
+      </div>
+
+      <div class="sidebar__section">
+        <h3 class="sidebar__heading">Availability</h3>
+        <div class="check-list">
+          <label class="check-row"><input type="checkbox" /><span>In Stock</span><em class="dot--green">●</em></label>
+          <label class="check-row"><input type="checkbox" /><span>Low Stock</span><em class="dot--amber">●</em></label>
+          <label class="check-row"><input type="checkbox" /><span>Pre-Order</span><em class="dot--blue">●</em></label>
+          <label class="check-row"><input type="checkbox" /><span>Coming Soon</span><em class="dot--gray">●</em></label>
+        </div>
+      </div>
+
+      <div class="sidebar__section">
+        <h3 class="sidebar__heading">Certifications</h3>
+        <div class="check-list">
+          <label class="check-row"><input type="checkbox" /><span>OEKO-TEX®</span></label>
+          <label class="check-row"><input type="checkbox" /><span>GOTS Organic</span></label>
+          <label class="check-row"><input type="checkbox" /><span>Fair Trade</span></label>
+          <label class="check-row"><input type="checkbox" /><span>Recycled Content</span></label>
+        </div>
+      </div>
+
+      <button class="sidebar__reset">Reset All Filters</button>
+    </aside>
+
+    <!-- PRODUCT AREA -->
+    <main class="product-area">
+
+      <!-- toolbar -->
+      <div class="toolbar">
+        <p class="toolbar__count"><strong id="resultCount">0</strong> styles shown</p>
+        <div class="toolbar__right">
+          <div class="sort-wrap">
+            <label for="sortSelect">Sort</label>
+            <select class="sort-select" id="sortSelect">
+              <option value="newest">Newest Arrivals</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="best">Best Sellers</option>
+              <option value="alpha">Alphabetical</option>
+            </select>
+          </div>
+          <div class="view-toggle">
+            <button class="view-btn active" id="gridView" title="Grid view">▦</button>
+            <button class="view-btn" id="listView" title="List view">☰</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- active filter chips -->
+      <div class="active-filters" id="activeFilters">
+        <span class="active-filters__clear">Clear all</span>
+      </div>
+
+      <!-- product grid — populated by JS -->
+      <div class="product-grid" id="productGrid"></div>
+
+      <!-- pagination — populated by JS -->
+      <div class="pagination" id="pagination"></div>
+
+    </main>
+  </div>
+
+  <!-- ── QUICK VIEW MODAL ── -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+      <div class="modal__img">
+        <img id="modalImg" src="" alt="" />
+      </div>
+      <div class="modal__body">
+        <button class="modal__close" id="modalClose">✕</button>
+        <p class="modal__sku" id="modalSku"></p>
+        <h2 class="modal__name" id="modalName"></h2>
+        <p class="modal__label">Product Details</p>
+        <div id="modalDetails"></div>
+        <button class="modal__add-btn" id="modalAddBtn">Add to Order</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ORDER TRAY — always visible ── -->
+  <div class="order-tray" id="orderTray">
+    <div class="order-tray__inner">
+      <div class="order-tray__left">
+        <span class="order-tray__icon"><i class="ph-fill ph-shopping-cart"></i></span>
+        <div class="order-tray__info">
+          <span class="order-tray__count" id="trayCount"><strong>0</strong> items in your order</span>
+          <span class="order-tray__hint" id="trayHint">Browse the catalog and add styles above</span>
+        </div>
+      </div>
+      <div class="order-tray__actions">
+        <button class="tray-btn tray-btn--ghost" id="saveDraftBtn">Save Draft</button>
+        <button class="tray-btn tray-btn--primary" id="submitOrderBtn" disabled>Request Quotation →</button>
+      </div>
+    </div>
+  </div>
+
+    <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__top">
+        <a href="index.html">
+  <img src="alexwhl_logo.png" alt="Alex Wholesale" class="nav__logo-img" />
+</a>
+        <div class="footer__links">
+          <a href="careers.html">Careers</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+
+      <div class="footer__mid">
+        <p class="footer__address">057 King Street West, Toronto, ON M5H 1A1, Canada</p>
+        <a href="tel:+14160000000" class="footer__phone">+1 (416) 833-0911</a>
+        <span class="footer__mid-sep">|</span>
+        <a href="mailto:alex@bimp.me" class="footer__email">alex@bimp.me</a>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2025 Alex Wholesale. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="catalog.js?v=2"></script>
+  
+  <!-- ── HAMBURGER MENU JS START ── -->
+<script>
+  (function () {
+    var btn      = document.getElementById('navHamburger');
+    var menu     = document.getElementById('navLinks');
+    var closeBtn = document.getElementById('navClose');
+    if (btn && menu) {
+      btn.addEventListener('click', function () {
+        btn.classList.toggle('open');
+        menu.classList.toggle('open');
+      });
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+          btn.classList.remove('open');
+          menu.classList.remove('open');
+        });
+      }
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          btn.classList.remove('open');
+          menu.classList.remove('open');
+        });
+      });
+    }
+  })();
+</script>
+<!-- ── HAMBURGER MENU JS END ── -->
+</body>
+</html>

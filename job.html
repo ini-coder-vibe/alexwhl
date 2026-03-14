@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job — ALEX Wholesale</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="job.css" />
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav class="nav">
+  <div class="nav__placeholder"></div>
+  <a href="index.html">
+  <img src="alexwhl_logo.png" alt="Alex Wholesale" class="nav__logo-img" />
+</a>
+  <button class="nav__hamburger" id="navHamburger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<ul class="nav__links" id="navLinks">
+  <li class="nav__close-item">
+    <button class="nav__close-btn" id="navClose" aria-label="Close menu">
+      <span></span>
+      <span></span>
+    </button>
+  </li>
+  <li><a href="index.html#gallery">Collections</a></li>
+  <li><a href="catalog.html">Catalog</a></li>
+  <li><a href="#">Contact</a></li>
+  <li><a href="#" class="nav__cta">Order Now</a></li>
+</ul>
+
+  <!-- ── BREADCRUMB ── -->
+  <div class="breadcrumb">
+    <a href="careers.html" class="breadcrumb__item">Careers</a>
+    <span class="breadcrumb__sep">›</span>
+    <span class="breadcrumb__current">Job Details</span>
+  </div>
+
+  <!-- ── NOT FOUND STATE ── -->
+  <div class="not-found" id="notFound">
+    <p>Position not found.</p>
+    <a href="careers.html">← Back to Careers</a>
+  </div>
+
+  <!-- ── MAIN CONTENT (populated by JS) ── -->
+  <main class="job-page" id="jobPage">
+
+    <!-- LEFT: JOB DETAILS -->
+    <div class="job-detail">
+
+      <!-- header -->
+      <header class="job-detail__header">
+        <div class="job-detail__meta-top">
+          <span class="job-detail__dept" id="jDept"></span>
+          <span class="badge badge--lmia" id="jLmia">🇨🇦 LMIA Required</span>
+        </div>
+        <h1 class="job-detail__title" id="jTitle"></h1>
+
+        <ul class="job-detail__facts">
+          <li><i class="ph ph-map-pin"></i><span id="jLocation"></span></li>
+          <li><i class="ph ph-currency-dollar"></i><span id="jSalary"></span></li>
+          <li><i class="ph ph-users"></i><span id="jVacancies"></span></li>
+          <li><i class="ph ph-briefcase"></i><span id="jType"></span></li>
+          <li><i class="ph ph-calendar"></i>Closing: <span id="jClosing"></span></li>
+        </ul>
+
+        <div class="job-detail__tags" id="jTags"></div>
+      </header>
+
+      <div class="divider"></div>
+
+      <!-- summary -->
+      <section class="job-section">
+        <h2 class="job-section__title">About the Role</h2>
+        <p class="job-section__text" id="jSummary"></p>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- responsibilities -->
+      <section class="job-section">
+        <h2 class="job-section__title">What You'll Do</h2>
+        <ul class="job-list" id="jResponsibilities"></ul>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- requirements -->
+      <section class="job-section">
+        <h2 class="job-section__title">What We're Looking For</h2>
+        <ul class="job-list" id="jRequirements"></ul>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- lmia note -->
+      <div class="lmia-note">
+        <i class="ph-fill ph-seal-check"></i>
+        <div>
+          <p class="lmia-note__title">LMIA-Supported Position</p>
+          <p class="lmia-note__text">ALEX Wholesale is an approved employer under Canada's Temporary Foreign Worker Program. Eligible candidates applying from abroad may be supported through the LMIA process. Legal eligibility to work in Canada is required before the start date.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: APPLICATION FORM -->
+    <aside class="apply-panel">
+      <div class="apply-panel__inner">
+        <p class="apply-panel__eyebrow">Apply Now</p>
+        <h2 class="apply-panel__title" id="aTitle"></h2>
+
+        <form class="apply-form" id="applyForm" novalidate>
+
+          <div class="form-row form-row--2">
+            <div class="ff">
+              <label class="fl" for="aFirst">First Name <span class="req">*</span></label>
+              <input class="fi" type="text" id="aFirst" placeholder="Jane" required />
+              <span class="fe" id="eFirst"></span>
+            </div>
+            <div class="ff">
+              <label class="fl" for="aLast">Last Name <span class="req">*</span></label>
+              <input class="fi" type="text" id="aLast" placeholder="Smith" required />
+              <span class="fe" id="eLast"></span>
+            </div>
+          </div>
+
+          <div class="ff">
+            <label class="fl" for="aEmail">Email Address <span class="req">*</span></label>
+            <input class="fi" type="email" id="aEmail" placeholder="jane@email.com" required />
+            <span class="fe" id="eEmail"></span>
+          </div>
+
+          <div class="ff">
+            <label class="fl" for="aPhone">Phone Number <span class="req">*</span></label>
+            <input class="fi" type="tel" id="aPhone" placeholder="+1 555 000 0000" required />
+            <span class="fe" id="ePhone"></span>
+          </div>
+
+          <div class="ff">
+            <label class="fl" for="aCountry">Current Country of Residence <span class="req">*</span></label>
+            <select class="fi fi--select" id="aCountry" required>
+              <option value="" disabled selected>Select country…</option>
+              <option>Canada</option>
+              <option>United States</option>
+              <option>United Kingdom</option>
+              <option>Nigeria</option>
+              <option>Ghana</option>
+              <option>Kenya</option>
+              <option>South Africa</option>
+              <option>India</option>
+              <option>Philippines</option>
+              <option>Jamaica</option>
+              <option>Trinidad and Tobago</option>
+              <option>Other</option>
+            </select>
+            <span class="fe" id="eCountry"></span>
+          </div>
+
+          <div class="ff">
+            <label class="fl" for="aStatus">Immigration Status <span class="req">*</span></label>
+            <select class="fi fi--select" id="aStatus" required>
+              <option value="" disabled selected>Select status…</option>
+              <option>Foreign national seeking work permit</option>
+              <option>Currently in Canada — no work permit</option>
+              <option>Open work permit holder</option>
+              <option>PR applicant / in-process</option>
+              <option>Canadian Permanent Resident</option>
+              <option>Canadian Citizen</option>
+            </select>
+            <span class="fe" id="eStatus"></span>
+          </div>
+
+          <div class="ff">
+            <label class="fl" for="aExperience">Years of Relevant Experience <span class="req">*</span></label>
+            <select class="fi fi--select" id="aExperience" required>
+              <option value="" disabled selected>Select…</option>
+              <option>No experience — entry level</option>
+              <option>Less than 1 year</option>
+              <option>1–2 years</option>
+              <option>3–5 years</option>
+              <option>5+ years</option>
+            </select>
+            <span class="fe" id="eExperience"></span>
+          </div>
+
+          <div class="ff">
+            <label class="fl" for="aCover">Cover Note <span class="req">*</span></label>
+            <textarea class="fi fi--textarea" id="aCover" placeholder="Tell us briefly why you're a strong fit for this role…" rows="4" required></textarea>
+            <span class="fe" id="eCover"></span>
+          </div>
+
+          <div class="ff ff--check">
+            <label class="check-label">
+              <input type="checkbox" id="aConsent" required />
+              <span>I consent to ALEX Wholesale storing my data for recruitment purposes. <span class="req">*</span></span>
+            </label>
+            <span class="fe" id="eConsent"></span>
+          </div>
+
+          <button type="submit" class="apply-btn" id="applyBtn">
+            <span id="applyBtnLabel">Submit Application</span>
+            <i class="ph ph-arrow-right" id="applyBtnIcon"></i>
+          </button>
+
+        </form>
+
+        <!-- inline success -->
+        <div class="apply-success" id="applySuccess">
+          <div class="apply-success__icon">
+            <svg viewBox="0 0 52 52" fill="none">
+              <circle class="asc" cx="26" cy="26" r="24" stroke-width="2"/>
+              <path class="ask" d="M14 26l8 8 16-16" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p class="apply-success__eyebrow">Application Received</p>
+          <p class="apply-success__msg">Thank you. We'll review your application and respond within <strong>5 business days</strong>.</p>
+          <p class="apply-success__ref">Ref: <strong id="applyRef"></strong></p>
+        </div>
+
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__top">
+        <a href="index.html">
+  <img src="alexwhl_logo.png" alt="Alex Wholesale" class="nav__logo-img" />
+</a>
+        <div class="footer__links">
+          <a href="careers.html">Careers</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+
+      <div class="footer__mid">
+        <p class="footer__address">057 King Street West, Toronto, ON M5H 1A1, Canada</p>
+        
+        <a href="tel:+14160000000" class="footer__phone">+1 (416) 833-0911</a>
+        <span class="footer__mid-sep">|</span>
+        <a href="mailto:alex@bimp.me" class="footer__email">alex@bimp.me</a>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2025 Alex Wholesale. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+  
+  <script src="config.js"></script>
+
+  <script src="job.js"></script>
+  
+  <script>
+  (function () {
+    var btn      = document.getElementById('navHamburger');
+    var menu     = document.getElementById('navLinks');
+    var closeBtn = document.getElementById('navClose');
+    if (btn && menu) {
+      btn.addEventListener('click', function () {
+        btn.classList.toggle('open');
+        menu.classList.toggle('open');
+      });
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+          btn.classList.remove('open');
+          menu.classList.remove('open');
+        });
+      }
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          btn.classList.remove('open');
+          menu.classList.remove('open');
+        });
+      });
+    }
+  })();
+</script>
+</body>
+</html>

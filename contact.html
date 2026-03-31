@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Bimp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+
+ <!-- ── NAV ── --> <nav class="nav"> <a href="index.html" class="nav__back"><i class="ph ph-arrow-left"></i></a> <a href="index.html">
+  <img src="bimp_logo.png" alt="Bimp Wholesale" class="nav__logo-img" />
+</a> <button class="nav__hamburger" id="navHamburger" aria-label="Menu"> <span></span> <span></span> <span></span> </button> </nav>
+
+  <ul class="nav__links" id="navLinks">
+    <li class="nav__close-item">
+      <button class="nav__close-btn" id="navClose" aria-label="Close menu">
+        <span></span>
+        <span></span>
+      </button>
+    </li>
+    <li><a href="index.html#gallery">Collections</a></li>
+    <li><a href="catalog.html">Catalog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="#" class="nav__cta">Order Now</a></li>
+  </ul>
+
+  <!-- ── BREADCRUMB ── -->
+  <div class="breadcrumb">
+    <a href="index.html" class="breadcrumb__item">Home</a>
+    <span class="breadcrumb__sep">›</span>
+    <span class="breadcrumb__current">Contact</span>
+  </div>
+
+  <!-- ── MAIN ── -->
+  <main class="contact-main">
+
+    <div class="contact-intro">
+      <p class="contact-intro__eyebrow">Get in Touch</p>
+      <h1 class="contact-intro__title">Contact Us</h1>
+      <p class="contact-intro__sub">Have a question about wholesale pricing, minimum orders, or our collections? Send us a message and we'll get back to you within 1 business day.</p>
+
+      <div class="contact-details">
+        <div class="contact-details__row">
+          <span class="contact-details__label">Email</span>
+          <a href="mailto:support@bimp.me" class="contact-details__val">support@bimp.me</a>
+        </div>
+        <div class="contact-details__row">
+          <span class="contact-details__label">Phone</span>
+          <a href="tel:+14160000000" class="contact-details__val">+1 (782) 717-7460</a>
+        </div>
+        <div class="contact-details__row">
+          <span class="contact-details__label">Address</span>
+          <span class="contact-details__val">057 King Street West, Toronto, ON M5H 1A1</span>
+        </div>
+        <div class="contact-details__row">
+          <span class="contact-details__label">Hours</span>
+          <span class="contact-details__val">Mon – Fri, 9:00 AM – 5:00 PM EST</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+
+      <form class="contact-form" id="contactForm" novalidate>
+
+        <div class="ff">
+          <label class="fl" for="cName">Full Name <span class="req">*</span></label>
+          <input class="fi" type="text" id="cName" placeholder="Jane Smith" required />
+          <span class="fe" id="eName"></span>
+        </div>
+
+        <div class="ff">
+          <label class="fl" for="cEmail">Email Address <span class="req">*</span></label>
+          <input class="fi" type="email" id="cEmail" placeholder="jane@email.com" required />
+          <span class="fe" id="eEmail"></span>
+        </div>
+
+        <div class="ff">
+          <label class="fl" for="cMessage">Message <span class="req">*</span></label>
+          <textarea class="fi fi--textarea" id="cMessage" placeholder="How can we help you?" rows="5" required></textarea>
+          <span class="fe" id="eMessage"></span>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          <span id="submitLabel">Send Message</span>
+          <i class="ph ph-arrow-right" id="submitIcon"></i>
+        </button>
+
+        <p id="submitError" class="submit-error" style="display:none"></p>
+
+      </form>
+
+      <!-- inline success -->
+      <div class="contact-success" id="contactSuccess">
+        <div class="contact-success__icon">
+          <svg viewBox="0 0 52 52" fill="none">
+            <circle class="csc" cx="26" cy="26" r="24" stroke-width="2"/>
+            <path class="csk" d="M14 26l8 8 16-16" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p class="contact-success__eyebrow">Message Sent</p>
+        <p class="contact-success__msg">Thank you. We'll get back to you within <strong>1 business day</strong>.</p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__top">
+        <div class="footer__links">
+          <a href="careers.html">Careers</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+
+      <div class="footer__mid">
+        <p class="footer__address">057 King Street West, Toronto, ON M5H 1A1, Canada</p>
+        
+        <a href="tel:+14160000000" class="footer__phone">+1 (782) 717-7460</a>
+        <span class="footer__mid-sep">|</span>
+        <a href="mailto:support@bimp.me" class="footer__email">support@bimp.me</a>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Bimp. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+  <script src="config.js"></script>
+
+  <script src="contact.js"></script>
+  <script>
+    (function () {
+      var btn      = document.getElementById('navHamburger');
+      var menu     = document.getElementById('navLinks');
+      var closeBtn = document.getElementById('navClose');
+      if (btn && menu) {
+        btn.addEventListener('click', function () {
+          btn.classList.toggle('open');
+          menu.classList.toggle('open');
+        });
+        if (closeBtn) {
+          closeBtn.addEventListener('click', function () {
+            btn.classList.remove('open');
+            menu.classList.remove('open');
+          });
+        }
+        menu.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            btn.classList.remove('open');
+            menu.classList.remove('open');
+          });
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>

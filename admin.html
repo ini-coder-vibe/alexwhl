@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Bimp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <!-- ── AUTH GATE (shown until authenticated) ── -->
+  <div class="auth-gate" id="authGate">
+    <div class="auth-card">
+    
+      <p class="auth-card__label">Admin Access</p>
+      <form class="auth-form" id="authForm" novalidate>
+        <div class="ff">
+          <label class="fl" for="authToken">Authorization Token</label>
+          <input class="fi" type="password" id="authToken" placeholder="Enter your admin token" autocomplete="current-password" />
+          <span class="fe" id="authError"></span>
+        </div>
+        <button type="submit" class="auth-btn" id="authBtn">
+          <span id="authLabel">Authenticate</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ── DASHBOARD (hidden until authenticated) ── -->
+  <div class="dashboard" id="dashboard" style="display:none">
+
+    <!-- ── NAV ── -->
+    <nav class="nav">
+  <a href="index.html" class="nav__home">Home</a>
+  <a href="index.html">
+  <img src="Bimp_logo.png" alt="Bimp" class="nav__logo-img" />
+</a>
+  <button class="nav__signout" id="signOutBtn" title="Sign out">
+    <i class="ph ph-sign-out"></i>
+  </button>
+</nav>
+
+    <!-- ── PAGE HEADER ── -->
+    <header class="dash-header">
+      <div class="dash-header__inner">
+        <div>
+          <p class="dash-header__eyebrow">Admin</p>
+          <h1 class="dash-header__title">Dashboard</h1>
+        </div>
+        <div class="dash-stats" id="dashStats">
+          <div class="dash-stat">
+            <span class="dash-stat__num" id="statApplications">—</span>
+            <span class="dash-stat__label">Applications</span>
+          </div>
+          <div class="dash-stat">
+            <span class="dash-stat__num" id="statContacts">—</span>
+            <span class="dash-stat__label">Messages</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── TABS ── -->
+    <div class="dash-tabs">
+      <button class="dash-tab dash-tab--active" data-tab="applications">
+        <i class="ph ph-briefcase"></i> Applications
+      </button>
+      <button class="dash-tab" data-tab="contacts">
+        <i class="ph ph-envelope"></i> Contact Messages
+      </button>
+    </div>
+
+    <!-- ── CONTENT ── -->
+    <div class="dash-content">
+
+      <!-- Applications panel -->
+      <div class="dash-panel" id="panelApplications">
+        <div class="panel-toolbar">
+          <input class="panel-search" type="text" id="appSearch" placeholder="Search by name, email or job…" />
+          <select class="panel-filter" id="appJobFilter">
+            <option value="">All Positions</option>
+            <option>Wholesale Account Manager</option>
+            <option>Inventory &amp; Buying Coordinator</option>
+            <option>Outbound Logistics Supervisor</option>
+            <option>General Worker</option>
+          </select>
+        </div>
+        <div class="table-wrap" id="appTableWrap">
+          <table class="data-table" id="appTable">
+            <thead>
+              <tr>
+                <th>Ref</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Position</th>
+                <th>Country</th>
+                <th>Status</th>
+                <th>Experience</th>
+                <th>Submitted</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="appBody"></tbody>
+          </table>
+        </div>
+        <div class="panel-empty" id="appEmpty">No applications found.</div>
+        <div class="panel-loading" id="appLoading"><span class="loader"></span> Loading…</div>
+      </div>
+
+      <!-- Contacts panel -->
+      <div class="dash-panel dash-panel--hidden" id="panelContacts">
+        <div class="panel-toolbar">
+          <input class="panel-search" type="text" id="msgSearch" placeholder="Search by name or email…" />
+        </div>
+        <div class="table-wrap" id="msgTableWrap">
+          <table class="data-table" id="msgTable">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Message</th>
+                <th>Submitted</th>
+              </tr>
+            </thead>
+            <tbody id="msgBody"></tbody>
+          </table>
+        </div>
+        <div class="panel-empty" id="msgEmpty">No messages found.</div>
+        <div class="panel-loading" id="msgLoading"><span class="loader"></span> Loading…</div>
+      </div>
+
+    </div>
+
+    <!-- ── DETAIL DRAWER (slide-in for full record) ── -->
+    <div class="drawer-overlay" id="drawerOverlay">
+      <div class="drawer" id="drawer">
+        <div class="drawer__header">
+          <h2 class="drawer__title" id="drawerTitle">Record</h2>
+          <button class="drawer__close" id="drawerClose"><i class="ph ph-x"></i></button>
+        </div>
+        <div class="drawer__body" id="drawerBody"></div>
+      </div>
+    </div>
+
+   <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__top">
+        <div class="footer__links">
+          <a href="careers.html">Careers</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+
+      <div class="footer__mid">
+        <p class="footer__address">057 King Street West, Toronto, ON M5H 1A1, Canada</p>
+        
+        <a href="tel:+14160000000" class="footer__phone">+1 (782) 717-7460</a>
+        <span class="footer__mid-sep">|</span>
+        <a href="mailto:support@bimp.me" class="footer__email">support@bimp.me</a>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Bimp. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  </div><!-- /dashboard -->
+  
+  <script src="config.js"></script>
+
+  <script src="admin.js"></script>
+</body>
+</html>

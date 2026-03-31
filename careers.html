@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers — BIMP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="careers.css" />
+</head>
+<body>
+
+<!-- ── NAV ── -->
+  <nav class="nav">
+  <div class="nav__placeholder"></div>
+  <a href="index.html">
+  <img src="bimp_logo.png" alt="Bimp Wholesale" class="nav__logo-img" />
+</a>
+  <button class="nav__hamburger" id="navHamburger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<ul class="nav__links" id="navLinks">
+  <li class="nav__close-item">
+    <button class="nav__close-btn" id="navClose" aria-label="Close menu">
+      <span></span>
+      <span></span>
+    </button>
+  </li>
+  <li><a href="index.html#gallery">Collections</a></li>
+  <li><a href="catalog.html">Catalog</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="#" class="nav__cta">Order Now</a></li>
+</ul>
+
+  
+  <!-- ── BREADCRUMB ── -->
+  <div class="breadcrumb">
+    <a href="index.html" class="breadcrumb__item">Home</a>
+    <span class="breadcrumb__sep">›</span>
+    <span class="breadcrumb__current">Careers</span>
+  </div>
+
+  <!-- ── PAGE HEADER ── -->
+  <header class="page-header">
+    <div class="page-header__inner">
+      <p class="page-header__eyebrow">Join the Team</p>
+      <h1 class="page-header__title">Careers at APEX</h1>
+      <p class="page-header__sub">We're building the future of wholesale fashion. If you're sharp, driven, and know the industry — we want to hear from you.</p>
+    </div>
+    <div class="page-header__stats">
+      <div class="header-stat">
+        <span class="header-stat__num" id="statTotal">—</span>
+        <span class="header-stat__label">Open Roles</span>
+      </div>
+      <div class="header-stat">
+        <span class="header-stat__num" id="statLmia">—</span>
+        <span class="header-stat__label">LMIA Positions</span>
+      </div>
+      <div class="header-stat">
+        <span class="header-stat__num">Full-Time</span>
+        <span class="header-stat__label">All Roles</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── JOBS ── -->
+  <main class="jobs-section">
+
+    <div class="jobs-filter">
+      <span class="jobs-filter__label" id="filterLabel">Loading…</span>
+      <div class="jobs-filter__tags" id="filterTags">
+        <button class="filter-tag filter-tag--active">All</button>
+        <button class="filter-tag">Operations</button>
+        <button class="filter-tag">Sales</button>
+        <button class="filter-tag">Logistics</button>
+        <button class="filter-tag">Warehouse</button>
+        <button class="filter-tag">Security</button>
+        <button class="filter-tag">Driver</button>
+      </div>
+    </div>
+
+    <div class="jobs-grid" id="jobsGrid"></div><!-- /jobs-grid -->
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__top">
+        <div class="footer__links">
+          <a href="careers.html">Careers</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+
+      <div class="footer__mid">
+        <p class="footer__address">057 King Street West, Toronto, ON M5H 1A1, Canada</p>
+        
+        <a href="tel:+14160000000" class="footer__phone">+1 (782) 717-7460</a>
+        <span class="footer__mid-sep">|</span>
+        <a href="mailto:support@bimp.me" class="footer__email">support@bimp.me</a>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Bimp. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="careers.js"></script>
+  
+  <script>
+  (function () {
+    var btn      = document.getElementById('navHamburger');
+    var menu     = document.getElementById('navLinks');
+    var closeBtn = document.getElementById('navClose');
+    if (btn && menu) {
+      btn.addEventListener('click', function () {
+        btn.classList.toggle('open');
+        menu.classList.toggle('open');
+      });
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+          btn.classList.remove('open');
+          menu.classList.remove('open');
+        });
+      }
+      menu.querySelectorAll('a:not(.nav__cta)').forEach(function (link) {
+        link.addEventListener('click', function () {
+          btn.classList.remove('open');
+          menu.classList.remove('open');
+        });
+      });
+    }
+  }());
+  </script>
+
+</body>
+</html>

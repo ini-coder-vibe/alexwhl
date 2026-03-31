@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request Quotation — Bimp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="quotation.css" />
+</head>
+<body>
+
+ <!-- ── NAVIGATION ── -->
+<nav class="nav">
+  <a href="index.html" class="nav__back"><i class="ph ph-arrow-left"></i></a>
+  <a href="index.html">
+  <img src="bimp_logo.png" alt="Bimp" class="nav__logo-img" />
+</a>
+  <button class="nav__hamburger" id="navHamburger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- ── HAMBURGER MENU OVERLAY ── -->
+<ul class="nav__links" id="navLinks">
+  <li class="nav__close-item">
+    <button class="nav__close-btn" id="navClose" aria-label="Close menu">
+      <span></span>
+      <span></span>
+    </button>
+  </li>
+  <li><a href="index.html#gallery">Collections</a></li>
+  <li><a href="catalog.html">Catalog</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="#" class="nav__cta">Order Now</a></li>
+</ul>
+
+  <!-- ── PAGE HEADER ── -->
+  <header class="page-header">
+    <div class="page-header__inner">
+      <p class="page-header__eyebrow">Step 2 of 2</p>
+      <h1 class="page-header__title">Request Quotation</h1>
+      <p class="page-header__sub">Review your selected styles, set quantities, and submit your details. Our team will respond within 24 hours.</p>
+    </div>
+    <a href="catalog.html" class="breadcrumb-back">← Back to Catalog</a>
+  </header>
+
+  <!-- ── MAIN LAYOUT ── -->
+  <div class="quote-layout">
+
+    <!-- LEFT: ORDER SUMMARY -->
+    <section class="order-summary">
+
+      <div class="section-head">
+        <h2 class="section-title">Order Summary</h2>
+        <span class="item-badge" id="itemCount">0 items</span>
+      </div>
+
+      <div class="summary-table-wrap" id="summaryTableWrap">
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>SKU</th>
+              <th>Unit Price (24+)</th>
+              <th>Qty</th>
+              <th>Subtotal</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="summaryBody"></tbody>
+        </table>
+      </div>
+
+      <div class="empty-state" id="emptyState">
+        <span class="empty-state__icon">🛒</span>
+        <p>No items selected.</p>
+        <a href="catalog.html" class="empty-state__link">Browse the catalog →</a>
+      </div>
+
+      <div class="order-totals" id="orderTotals">
+        <div class="totals-row">
+          <span>Subtotal (est. 24+ rate)</span>
+          <strong id="subtotalVal">$0.00</strong>
+        </div>
+        <div class="totals-row">
+          <span>Shipping &amp; Handling</span>
+          <span class="totals-note">Confirmed after review</span>
+        </div>
+        <div class="totals-row totals-row--grand">
+          <span>Estimated Total</span>
+          <strong id="totalVal">$0.00</strong>
+        </div>
+      </div>
+
+      <div class="notice">
+        <span class="notice__icon">ℹ</span>
+        <p>This is a quotation request only — not a confirmed order. Final pricing, availability, and shipping will be confirmed by our team within 24 hours.</p>
+      </div>
+
+    </section>
+
+    <!-- RIGHT: CONTACT FORM -->
+    <section class="form-section">
+
+      <div class="section-head">
+        <h2 class="section-title">Your Details</h2>
+      </div>
+
+      <div class="inline-success" id="inlineSuccess">
+        <div class="inline-success__icon">
+          <svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle class="inline-success__circle" cx="26" cy="26" r="24" stroke-width="2"/>
+            <path class="inline-success__check" d="M14 26l8 8 16-16" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p class="inline-success__eyebrow">Request Received</p>
+        <h3 class="inline-success__title">Quotation Submitted!</h3>
+        <p class="inline-success__msg">Thank you. Our wholesale team will review your items and get back to you at your business email within <strong>24 hours</strong>.</p>
+        <div class="inline-success__meta">
+          <div class="inline-success__meta-row">
+            <span class="inline-success__meta-label">Reference</span>
+            <span class="inline-success__meta-val" id="refNumber">—</span>
+          </div>
+          <div class="inline-success__meta-row">
+            <span class="inline-success__meta-label">Submitted by</span>
+            <span class="inline-success__meta-val" id="submittedBy">—</span>
+          </div>
+          <div class="inline-success__meta-row">
+            <span class="inline-success__meta-label">Company</span>
+            <span class="inline-success__meta-val" id="submittedCompany">—</span>
+          </div>
+          <div class="inline-success__meta-row">
+            <span class="inline-success__meta-label">Expected response</span>
+            <span class="inline-success__meta-val">Within 24 hours</span>
+          </div>
+        </div>
+        <a href="catalog.html" class="inline-success__btn">Continue Browsing →</a>
+      </div>
+
+      <form class="quote-form" id="quoteForm" novalidate>
+
+        <div class="form-row form-row--2">
+          <div class="form-field">
+            <label class="form-label" for="firstName">First Name <span class="req">*</span></label>
+            <input class="form-input" type="text" id="firstName" placeholder="Jane" required />
+            <span class="form-error" id="errFirstName"></span>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="lastName">Last Name <span class="req">*</span></label>
+            <input class="form-input" type="text" id="lastName" placeholder="Smith" required />
+            <span class="form-error" id="errLastName"></span>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="company">Company / Business Name <span class="req">*</span></label>
+          <input class="form-input" type="text" id="company" placeholder="Smith Boutique Ltd." required />
+          <span class="form-error" id="errCompany"></span>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="email">Business Email <span class="req">*</span></label>
+          <input class="form-input" type="email" id="email" placeholder="jane@smithboutique.com" required />
+          <span class="form-error" id="errEmail"></span>
+        </div>
+
+        <div class="form-row form-row--2">
+          <div class="form-field">
+            <label class="form-label" for="phone">Phone Number</label>
+            <input class="form-input" type="tel" id="phone" placeholder="+1 555 000 0000" />
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="country">Country <span class="req">*</span></label>
+            <select class="form-input form-select" id="country" required>
+              <option value="" disabled selected>Select country…</option>
+              <option>United States</option>
+              <option>United Kingdom</option>
+              <option>Canada</option>
+              <option>Australia</option>
+              <option>Germany</option>
+              <option>France</option>
+              <option>Netherlands</option>
+              <option>UAE</option>
+              <option>South Africa</option>
+              <option>Nigeria</option>
+              <option>Other</option>
+            </select>
+            <span class="form-error" id="errCountry"></span>
+          </div>
+        </div>
+
+        <div class="form-row form-row--2">
+          <div class="form-field">
+            <label class="form-label" for="bizType">Business Type <span class="req">*</span></label>
+            <select class="form-input form-select" id="bizType" required>
+              <option value="" disabled selected>Select type…</option>
+              <option>Retailer</option>
+              <option>Boutique Owner</option>
+              <option>Online Store</option>
+              <option>Distributor</option>
+              <option>Market Trader</option>
+              <option>Other</option>
+            </select>
+            <span class="form-error" id="errBizType"></span>
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="orderFreq">Order Frequency</label>
+            <select class="form-input form-select" id="orderFreq">
+              <option value="" disabled selected>Select…</option>
+              <option>First-time order</option>
+              <option>Monthly</option>
+              <option>Quarterly</option>
+              <option>Seasonally</option>
+              <option>As needed</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="notes">Additional Notes</label>
+          <textarea class="form-input form-textarea" id="notes" placeholder="Colour preferences, delivery deadlines, special requests…" rows="4"></textarea>
+        </div>
+
+        <div class="form-field form-field--check">
+          <label class="check-label">
+            <input type="checkbox" id="agreeTerms" required />
+            <span>I agree to the <a href="#">Terms &amp; Conditions</a> and <a href="#">Privacy Policy</a> <span class="req">*</span></span>
+          </label>
+          <span class="form-error" id="errTerms"></span>
+        </div>
+
+        <div class="form-field form-field--check">
+          <label class="check-label">
+            <input type="checkbox" id="newsletter" />
+            <span>Send me new arrivals and seasonal drop updates</span>
+          </label>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+          Submit Quotation Request <span>→</span>
+        </button>
+
+        <p class="form-disclaimer">No payment is taken at this stage. Our team will contact you within 1 business day.</p>
+
+      </form>
+    </section>
+
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="footer__inner">
+
+      <div class="footer__top">
+        <div class="footer__links">
+          <a href="careers.html">Careers</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+
+      <div class="footer__mid">
+        <p class="footer__address">057 King Street West, Toronto, ON M5H 1A1, Canada</p>
+        
+        <a href="tel:+14160000000" class="footer__phone">+1 (782) 717-7460</a>
+        <span class="footer__mid-sep">|</span>
+        <a href="mailto:support@bimp.me" class="footer__email">support@bimp.me</a>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Bimp. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="quotation.js"></script>
+  
+  <script>
+  (function () {
+    var btn      = document.getElementById('navHamburger');
+    var menu     = document.getElementById('navLinks');
+    var closeBtn = document.getElementById('navClose');
+    if (btn && menu) {
+      btn.addEventListener('click', function () {
+        btn.classList.toggle('open');
+        menu.classList.toggle('open');
+      });
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+          btn.classList.remove('open');
+          menu.classList.remove('open');
+        });
+      }
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          btn.classList.remove('open');
+          menu.classList.remove('open');
+        });
+      });
+    }
+  })();
+</script>
+</body>
+</html>

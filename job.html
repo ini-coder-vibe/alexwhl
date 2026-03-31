@@ -16,16 +16,15 @@
 
   <!-- ── NAV ── -->
   <nav class="nav">
-  <div class="nav__placeholder"></div>
-  <a href="index.html">
-  <img src="bimp_logo.png" alt="Bimp" class="nav__logo-img" />
-</a>
-  <button class="nav__hamburger" id="navHamburger" aria-label="Menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-</nav>
+    <a href="index.html">
+      <img src="bimp_logo.png" alt="Bimp Wholesale" class="nav__logo-img" />
+    </a>
+    <button class="nav__hamburger" id="navHamburger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
 
 <ul class="nav__links" id="navLinks">
   <li class="nav__close-item">
@@ -109,7 +108,7 @@
         <i class="ph-fill ph-seal-check"></i>
         <div>
           <p class="lmia-note__title">LMIA-Supported Position</p>
-          <p class="lmia-note__text">Bimp is an approved employer under Canada's Temporary Foreign Worker Program. Eligible candidates applying from abroad may be supported through the LMIA process. Legal eligibility to work in Canada is required before the start date.</p>
+          <p class="lmia-note__text">Bimp Wholesale is an approved employer under Canada's Temporary Foreign Worker Program. Eligible candidates applying from abroad may be supported through the LMIA process. Legal eligibility to work in Canada is required before the start date.</p>
         </div>
       </div>
 
@@ -222,7 +221,7 @@
 
   </main>
 
-  <!-- ── FOOTER ── -->
+<!-- ── FOOTER ── -->
   <footer class="footer">
     <div class="footer__inner">
 
@@ -248,7 +247,7 @@
     </div>
   </footer>
   
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="config.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="config.js"></script>
 
   <script src="job.js"></script>
   
@@ -310,6 +309,32 @@
           });
           ts.refreshOptions(false);
         });
+    }());
+  </script>
+
+  <script>
+    (function () {
+      var btn      = document.getElementById('navHamburger');
+      var menu     = document.getElementById('navLinks');
+      var closeBtn = document.getElementById('navClose');
+      if (btn && menu) {
+        btn.addEventListener('click', function () {
+          btn.classList.toggle('open');
+          menu.classList.toggle('open');
+        });
+        if (closeBtn) {
+          closeBtn.addEventListener('click', function () {
+            btn.classList.remove('open');
+            menu.classList.remove('open');
+          });
+        }
+        menu.querySelectorAll('a:not(.nav__cta)').forEach(function (link) {
+          link.addEventListener('click', function () {
+            btn.classList.remove('open');
+            menu.classList.remove('open');
+          });
+        });
+      }
     }());
   </script>
 

@@ -211,40 +211,50 @@
 
     let currentVariant = 'dark';
     const FONT_SIZE = 72;
-    const PAD_X = 28;
-    const H = 100;
+    const PAD_X = 0;
+    const PAD_Y = 4; // minimal vertical breathing room only
 
     document.fonts.ready.then(() => {
       drawLogo(currentVariant);
       bindEvents();
     });
 
+    function measureText(ctx) {
+      ctx.font = `700 ${FONT_SIZE}px 'Comfortaa', sans-serif`;
+      ctx.letterSpacing = '0px';
+      const m = ctx.measureText('bimp');
+      const w = Math.ceil(m.width);
+      const asc  = Math.ceil(m.actualBoundingBoxAscent);
+      const desc = Math.ceil(m.actualBoundingBoxDescent);
+      const h = asc + desc + PAD_Y * 2;
+      return { w, asc, desc, h };
+    }
+
     function drawLogo(variant) {
       const { bg, color, transparent } = VARIANTS[variant];
       const canvas = document.getElementById('logoCanvas');
+
+      // Measure on a temp context first
+      const tmp = document.createElement('canvas');
+      tmp.width = 600; tmp.height = 200;
+      const tctx = tmp.getContext('2d');
+      const { w, asc, desc, h } = measureText(tctx);
+
+      canvas.width  = w;
+      canvas.height = h;
       const ctx = canvas.getContext('2d');
-
-      // Measure first
-      ctx.font = `700 ${FONT_SIZE}px 'Comfortaa', sans-serif`;
-      ctx.letterSpacing = '-1px';
-      const textW = ctx.measureText('bimp').width;
-      const W = Math.ceil(textW + PAD_X * 2);
-
-      canvas.width  = W;
-      canvas.height = H;
-      ctx.clearRect(0, 0, W, H);
+      ctx.clearRect(0, 0, w, h);
 
       if (!transparent) {
         ctx.fillStyle = bg;
-        ctx.fillRect(0, 0, W, H);
+        ctx.fillRect(0, 0, w, h);
       }
 
-      // Re-apply font after resize (context reset)
       ctx.font = `700 ${FONT_SIZE}px 'Comfortaa', sans-serif`;
-      ctx.letterSpacing = '-1px';
-      ctx.textBaseline = 'middle';
+      ctx.letterSpacing = '0px';
+      ctx.textBaseline = 'alphabetic';
       ctx.fillStyle = color;
-      ctx.fillText('bimp', PAD_X, H / 2);
+      ctx.fillText('bimp', 0, PAD_Y + asc);
 
       // Preview bg
       if (transparent) {
@@ -256,35 +266,33 @@
         document.getElementById('canvasWrap').style.background = '#0a0a0a';
       }
 
-      document.getElementById('specW').textContent = W + 'px';
+      document.getElementById('specW').textContent = w + 'px';
     }
 
     function drawOffscreen(variant, scale) {
       const { bg, color, transparent } = VARIANTS[variant];
 
       const tmp = document.createElement('canvas');
+      tmp.width = 600; tmp.height = 200;
       const tctx = tmp.getContext('2d');
-      tctx.font = `700 ${FONT_SIZE}px 'Comfortaa', sans-serif`;
-      tctx.letterSpacing = '-1px';
-      const textW = tctx.measureText('bimp').width;
-      const W = Math.ceil(textW + PAD_X * 2);
+      const { w, asc, desc, h } = measureText(tctx);
 
       const off = document.createElement('canvas');
-      off.width  = W * scale;
-      off.height = H * scale;
+      off.width  = w * scale;
+      off.height = h * scale;
       const ctx = off.getContext('2d');
       ctx.scale(scale, scale);
 
       if (!transparent) {
         ctx.fillStyle = bg;
-        ctx.fillRect(0, 0, W, H);
+        ctx.fillRect(0, 0, w, h);
       }
 
       ctx.font = `700 ${FONT_SIZE}px 'Comfortaa', sans-serif`;
-      ctx.letterSpacing = '-1px';
-      ctx.textBaseline = 'middle';
+      ctx.letterSpacing = '0px';
+      ctx.textBaseline = 'alphabetic';
       ctx.fillStyle = color;
-      ctx.fillText('bimp', PAD_X, H / 2);
+      ctx.fillText('bimp', 0, PAD_Y + asc);
 
       return off;
     }
